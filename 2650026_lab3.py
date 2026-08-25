@@ -25,8 +25,8 @@ class AVL_Node:
         self.height = None
         self.balance_factor = None
 
-def AVL_get_height(node: AVL_Node) -> int:
-    if not node:
+def AVL_get_height(node: AVL_Node | None) -> int:
+    if node is None:
         return 0
 
     left = right = 0
@@ -43,3 +43,34 @@ def AVL_get_balance_factor(node: AVL_Node) -> int:
         return 0
     return AVL_get_height(node.lchild) - AVL_get_height(node.rchild) # type: ignore
 
+def AVL_right_rotate(y_node: AVL_Node | None) -> None:
+    if y_node is None:
+        return
+
+    x_node = y_node.lchild
+    TEMP_NODE = x_node.rchild # type: ignore
+
+    x_node.rchild = y_node # type: ignore
+    y_node.lchild = TEMP_NODE
+
+    AVL_get_height(x_node)
+    AVL_get_height(y_node)
+    AVL_get_balance_factor(x_node) # type: ignore
+    AVL_get_balance_factor(y_node)
+    return
+
+def AVL_left_rotate(y_node: AVL_Node | None) -> None:
+    if y_node is None:
+        return
+
+    x_node = y_node.rchild
+    TEMP_NODE = x_node.lchild # type: ignore
+
+    y_node.lchild = x_node
+    x_node.rchild = TEMP_NODE # type: ignore
+    
+    AVL_get_height(x_node)
+    AVL_get_height(y_node)
+    AVL_get_balance_factor(x_node) # type: ignore
+    AVL_get_balance_factor(y_node)
+    return
