@@ -1,6 +1,7 @@
+# Read a set of integer elements from an input file (input.txt)
 import sys
 arr0 = []
-data0 = open("lab1_data0.dat", 'r')
+data0 = open("input.txt", 'r')
 
 try:
     for line in data0.readlines():
