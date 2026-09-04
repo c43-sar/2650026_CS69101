@@ -1,0 +1,4 @@
+Input Size (Random Unsorted),Avg Delete Time (Iterations),Max Delete Time (Iterations),Min Delete Time (Iterations)
+1000,2.0,12,1
+5000,2.0,9,1
+10000,2.0,10,1

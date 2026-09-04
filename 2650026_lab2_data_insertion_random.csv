@@ -1,0 +1,4 @@
+Input Size (Random Unsorted),Avg Build Time (Iterations),Max Build Time (Iterations),Min Build Time (Iterations),Max Height,Min Height,Avg Height
+1000,11.603,23,0,24,1,19.942
+5000,14.5214,28,0,29,1,24.6054
+10000,16.078,33,0,34,1,30.1435

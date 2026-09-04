@@ -1,0 +1,4 @@
+Input Size (Random Unsorted),Avg Search Time (Iterations),Max Search Time (Iterations),Min Search Time (Iterations)
+1000,502.0,1000,1
+5000,2432.0,4996,2
+10000,4946.0,9998,3
