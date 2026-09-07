@@ -1,4 +1,4 @@
-Input Size (Reverse Sorted),Avg Build Time (Iterations),Max Build Time (Iterations),Min Build Time (Iterations),Max Height,Min Height,Avg Height
-1000,499.5,999,0,1000,1,500.5
-5000,2499.5,4999,0,5000,1,2500.5
-10000,4999.5,9999,0,10000,1,5000.5
+Input Size (Reverse Sorted),Avg Search Time (Iterations),Max Search Time (Iterations),Min Search Time (Iterations)
+1000,511.0,997,1
+5000,2574.0,5000,1
+10000,4804.0,9996,19
