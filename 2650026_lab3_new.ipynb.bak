@@ -1,0 +1,92 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "ad89ba43",
+   "metadata": {},
+   "source": [
+    "# AVL Tree Trial Code"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "2bacac20",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "from io import TextIOWrapper\n",
+    "from typing import Self\n",
+    "import random\n",
+    "import sys\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f8893f49",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class AVL_node:\n",
+    "    def __init__(self, value: int) -> None:\n",
+    "        self.__value = value\n",
+    "        self.__lchild = None\n",
+    "        self.__rchild = None\n",
+    "        self.__parent = None\n",
+    "        self.__height = 0\n",
+    "        return\n",
+    "\n",
+    "    def get_value(self) -> int:\n",
+    "        return self.__value\n",
+    "\n",
+    "    def get_lchild(self) -> Self | None:\n",
+    "        return self.__lchild\n",
+    "\n",
+    "    def set_lchild(self, lchild: Self | None) -> None:\n",
+    "        self.__lchild = lchild\n",
+    "        return\n",
+    "\n",
+    "    lchild = property(get_lchild, set_lchild)\n",
+    "\n",
+    "    def get_rchild(self) -> Self | None:\n",
+    "        return self.__rchild\n",
+    "\n",
+    "    def set_rchild(self, rchild: Self | None) -> None:\n",
+    "        self.__rchild = rchild\n",
+    "        return\n",
+    "\n",
+    "    rchild = property(get_rchild, set_rchild)\n",
+    "\n",
+    "    def get_parent(self) -> Self | None:\n",
+    "        return self.__parent\n",
+    "\n",
+    "    def get_height(self) -> int:\n",
+    "        return self.__height"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": ".venv (3.14.7)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
