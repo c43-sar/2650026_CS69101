@@ -1,6 +1,6 @@
 # Segment Trees Pseudocodes from Gemini 3.6 Flash
 
-```  
+```Pseudocode
 // Global constants and arrays
 MAX_DATSIZE = 10^5
 data = ARRAY[0 .. 4 * MAX_DATSIZE - 1] OF INTEGER OR NULL
