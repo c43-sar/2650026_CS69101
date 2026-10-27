@@ -12,121 +12,135 @@ rangefn = SUM                       // Default binary range function
 // -------------------------------------------------------------------
 // Set Range Function
 // -------------------------------------------------------------------
-SET-RANGEFN(name, fn)
-    if fn is provided:
-        rangefn = fn
+SET-RANGEFN(name, custom_fn)
+    if custom_fn is provided:
+        rangefn = custom_fn
     else if name = "SUM":
-        rangefn = (x, y) -> x + y
+        rangefn = (first_val, second_val) -> first_val + second_val
     else if name = "MIN":
-        rangefn = (x, y) -> min(x, y)
+        rangefn = (first_val, second_val) -> min(first_val, second_val)
     else if name = "MAX":
-        rangefn = (x, y) -> max(x, y)
+        rangefn = (first_val, second_val) -> max(first_val, second_val)
 
 
 // -------------------------------------------------------------------
 // Helper to check if a node or its subtrees contain active elements
 // -------------------------------------------------------------------
-HAS-ACTIVE(v, l, r)
-    if l = r:
-        return active[l]
-    mid = floor((l + r) / 2)
-    return HAS-ACTIVE(2*v + 1, l, mid) or HAS-ACTIVE(2*v + 2, mid + 1, r)
+HAS-ACTIVE(node, left_bound, right_bound)
+    if left_bound = right_bound:
+        return active[left_bound]
+    midpoint = floor((left_bound + right_bound) / 2)
+    left_child = 2 * node + 1
+    right_child = 2 * node + 2
+    return HAS-ACTIVE(left_child, left_bound, midpoint) or HAS-ACTIVE(right_child, midpoint + 1, right_bound)
 
 
 // -------------------------------------------------------------------
 // Point Insertion
 // -------------------------------------------------------------------
-INSERT(p, x, l = 0, r = MAX_DATSIZE - 1, v = 0)
-    if l = r:
-        if active[p] is FALSE:
-            active[p] = TRUE
+INSERT(target_index, value, left_bound = 0, right_bound = MAX_DATSIZE - 1, node = 0)
+    if left_bound = right_bound:
+        if active[target_index] is FALSE:
+            active[target_index] = TRUE
             size = size + 1          // Increment active element count
-        data[v] = x
+        data[node] = value
         return
 
-    mid = floor((l + r) / 2)
-    if p <= mid:
-        INSERT(p, x, l, mid, 2*v + 1)
+    midpoint = floor((left_bound + right_bound) / 2)
+    left_child = 2 * node + 1
+    right_child = 2 * node + 2
+
+    if target_index <= midpoint:
+        INSERT(target_index, value, left_bound, midpoint, left_child)
     else:
-        INSERT(p, x, mid + 1, r, 2*v + 2)
+        INSERT(target_index, value, midpoint + 1, right_bound, right_child)
 
     // Recompute aggregate without relying on identity elements
-    left_has = HAS-ACTIVE(2*v + 1, l, mid)
-    right_has = HAS-ACTIVE(2*v + 2, mid + 1, r)
+    left_has = HAS-ACTIVE(left_child, left_bound, midpoint)
+    right_has = HAS-ACTIVE(right_child, midpoint + 1, right_bound)
 
     if left_has and right_has:
-        data[v] = rangefn(data[2*v + 1], data[2*v + 2])
+        data[node] = rangefn(data[left_child], data[right_child])
     else if left_has:
-        data[v] = data[2*v + 1]
+        data[node] = data[left_child]
     else if right_has:
-        data[v] = data[2*v + 2]
+        data[node] = data[right_child]
 
 
 // -------------------------------------------------------------------
 // Point Deletion
 // -------------------------------------------------------------------
-DELETE(p, l = 0, r = MAX_DATSIZE - 1, v = 0)
-    if not HAS-ACTIVE(v, l, r):
+DELETE(target_index, left_bound = 0, right_bound = MAX_DATSIZE - 1, node = 0)
+    if not HAS-ACTIVE(node, left_bound, right_bound):
         return
 
-    if l = r:
-        if active[p] is TRUE:
-            active[p] = FALSE
+    if left_bound = right_bound:
+        if active[target_index] is TRUE:
+            active[target_index] = FALSE
             size = size - 1          // Decrement active element count
-            data[v] = NULL
+            data[node] = NULL
         return
 
-    mid = floor((l + r) / 2)
-    if p <= mid:
-        DELETE(p, l, mid, 2*v + 1)
+    midpoint = floor((left_bound + right_bound) / 2)
+    left_child = 2 * node + 1
+    right_child = 2 * node + 2
+
+    if target_index <= midpoint:
+        DELETE(target_index, left_bound, midpoint, left_child)
     else:
-        DELETE(p, mid + 1, r, 2*v + 2)
+        DELETE(target_index, midpoint + 1, right_bound, right_child)
 
     // Recompute aggregate after deletion
-    left_has = HAS-ACTIVE(2*v + 1, l, mid)
-    right_has = HAS-ACTIVE(2*v + 2, mid + 1, r)
+    left_has = HAS-ACTIVE(left_child, left_bound, midpoint)
+    right_has = HAS-ACTIVE(right_child, midpoint + 1, right_bound)
 
     if left_has and right_has:
-        data[v] = rangefn(data[2*v + 1], data[2*v + 2])
+        data[node] = rangefn(data[left_child], data[right_child])
     else if left_has:
-        data[v] = data[2*v + 1]
+        data[node] = data[left_child]
     else if right_has:
-        data[v] = data[2*v + 2]
+        data[node] = data[right_child]
     else:
-        data[v] = NULL
+        data[node] = NULL
 
 
 // -------------------------------------------------------------------
 // Inorder Traversal
 // -------------------------------------------------------------------
-TRAVERSE(l = 0, r = MAX_DATSIZE - 1, v = 0)
-    if not HAS-ACTIVE(v, l, r):
+TRAVERSE(left_bound = 0, right_bound = MAX_DATSIZE - 1, node = 0)
+    if not HAS-ACTIVE(node, left_bound, right_bound):
         return
 
-    if l = r:
-        if active[l]:
-            PRINT "Leaf", l, ":", data[v]
+    if left_bound = right_bound:
+        if active[left_bound]:
+            PRINT "Leaf", left_bound, ":", data[node]
         return
 
-    mid = floor((l + r) / 2)
-    TRAVERSE(l, mid, 2*v + 1)
-    PRINT "Internal Aggregate [", l, "..", r, "]:", data[v]
-    TRAVERSE(mid + 1, r, 2*v + 2)
+    midpoint = floor((left_bound + right_bound) / 2)
+    left_child = 2 * node + 1
+    right_child = 2 * node + 2
+
+    TRAVERSE(left_bound, midpoint, left_child)
+    PRINT "Internal Aggregate [", left_bound, "..", right_bound, "]:", data[node]
+    TRAVERSE(midpoint + 1, right_bound, right_child)
 
 
 // -------------------------------------------------------------------
 // Range Query (No Identity Element Required)
 // -------------------------------------------------------------------
-RANGE-QUERY(i, j, l = 0, r = MAX_DATSIZE - 1, v = 0)
-    if r < i or j < l or not HAS-ACTIVE(v, l, r):
+RANGE-QUERY(query_start, query_end, left_bound = 0, right_bound = MAX_DATSIZE - 1, node = 0)
+    if right_bound < query_start or query_end < left_bound or not HAS-ACTIVE(node, left_bound, right_bound):
         return NULL
 
-    if i <= l and r <= j:
-        return data[v]
+    if query_start <= left_bound and right_bound <= query_end:
+        return data[node]
 
-    mid = floor((l + r) / 2)
-    left_res = RANGE-QUERY(i, j, l, mid, 2*v + 1)
-    right_res = RANGE-QUERY(i, j, mid + 1, r, 2*v + 2)
+    midpoint = floor((left_bound + right_bound) / 2)
+    left_child = 2 * node + 1
+    right_child = 2 * node + 2
+
+    left_res = RANGE-QUERY(query_start, query_end, left_bound, midpoint, left_child)
+    right_res = RANGE-QUERY(query_start, query_end, midpoint + 1, right_bound, right_child)
 
     if left_res is not NULL and right_res is not NULL:
         return rangefn(left_res, right_res)
