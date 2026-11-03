@@ -1,0 +1,74 @@
+Original array:
+70 50 90 77 55 348 76 67 69 420 25 911 210 108 768 1080 720
+
+Segment Tree:
+[0, 16]  minimum = 25, maximum = 1080
+    [0, 8]  minimum = 50, maximum = 348
+        [0, 4]  minimum = 50, maximum = 90
+            [0, 2]  minimum = 50, maximum = 90
+                [0, 1]  minimum = 50, maximum = 70
+                    [0, 0]  minimum = 70, maximum = 70
+                    [1, 1]  minimum = 50, maximum = 50
+                [2, 2]  minimum = 90, maximum = 90
+            [3, 4]  minimum = 55, maximum = 77
+                [3, 3]  minimum = 77, maximum = 77
+                [4, 4]  minimum = 55, maximum = 55
+        [5, 8]  minimum = 67, maximum = 348
+            [5, 6]  minimum = 76, maximum = 348
+                [5, 5]  minimum = 348, maximum = 348
+                [6, 6]  minimum = 76, maximum = 76
+            [7, 8]  minimum = 67, maximum = 69
+                [7, 7]  minimum = 67, maximum = 67
+                [8, 8]  minimum = 69, maximum = 69
+    [9, 16]  minimum = 25, maximum = 1080
+        [9, 12]  minimum = 25, maximum = 911
+            [9, 10]  minimum = 25, maximum = 420
+                [9, 9]  minimum = 420, maximum = 420
+                [10, 10]  minimum = 25, maximum = 25
+            [11, 12]  minimum = 210, maximum = 911
+                [11, 11]  minimum = 911, maximum = 911
+                [12, 12]  minimum = 210, maximum = 210
+        [13, 16]  minimum = 108, maximum = 1080
+            [13, 14]  minimum = 108, maximum = 768
+                [13, 13]  minimum = 108, maximum = 108
+                [14, 14]  minimum = 768, maximum = 768
+            [15, 16]  minimum = 720, maximum = 1080
+                [15, 15]  minimum = 1080, maximum = 1080
+                [16, 16]  minimum = 720, maximum = 720
+
+Query [0, 3]
+Minimum = 50
+Maximum = 90
+
+Query [2, 6]
+Minimum = 55
+Maximum = 348
+
+Query [1, 5]
+Minimum = 50
+Maximum = 348
+
+Query [4, 7]
+Minimum = 55
+Maximum = 348
+
+Update:
+Index = 3
+New Value = 25
+Query [0, 16]
+Minimum = 25
+Maximum = 1080
+
+Update:
+Index = 5
+New Value = 144
+Query [0, 16]
+Minimum = 25
+Maximum = 1080
+
+Update:
+Index = 5
+New Value = 113
+Query [0, 16]
+Minimum = 25
+Maximum = 1080
