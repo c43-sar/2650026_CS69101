@@ -1,0 +1,56 @@
+Original array:
+12 5 18 3 9 21 7 14
+
+Segment Tree:
+[0, 7]  minimum = 3, maximum = 21
+    [0, 3]  minimum = 3, maximum = 18
+        [0, 1]  minimum = 5, maximum = 12
+            [0, 0]  minimum = 12, maximum = 12
+            [1, 1]  minimum = 5, maximum = 5
+        [2, 3]  minimum = 3, maximum = 18
+            [2, 2]  minimum = 18, maximum = 18
+            [3, 3]  minimum = 3, maximum = 3
+    [4, 7]  minimum = 7, maximum = 21
+        [4, 5]  minimum = 9, maximum = 21
+            [4, 4]  minimum = 9, maximum = 9
+            [5, 5]  minimum = 21, maximum = 21
+        [6, 7]  minimum = 7, maximum = 14
+            [6, 6]  minimum = 7, maximum = 7
+            [7, 7]  minimum = 14, maximum = 14
+
+Query [0, 3]
+Minimum = 3
+Maximum = 18
+
+Query [2, 6]
+Minimum = 3
+Maximum = 21
+
+Query [1, 5]
+Minimum = 3
+Maximum = 21
+
+Query [4, 7]
+Minimum = 7
+Maximum = 21
+
+Update:
+Index = 3
+New Value = 25
+Query [0, 7]
+Minimum = 5
+Maximum = 25
+
+Update:
+Index = 2
+New Value = 57
+Query [0, 7]
+Minimum = 5
+Maximum = 57
+
+Update:
+Index = 5
+New Value = 20
+Query [0, 7]
+Minimum = 5
+Maximum = 57
