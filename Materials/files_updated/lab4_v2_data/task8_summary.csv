@@ -1,0 +1,7 @@
+Nodes,Input Order,Tree,Height,Insertion Iterations,Deletion Iterations,Search Iterations
+10000,Random,BST,235,160.979,116.975,112.132
+10000,Random,Red-Black Tree,17,15.319,14.93,12.302
+10000,Sorted,BST,10000,9499.5,4700.194,4781.149
+10000,Sorted,Red-Black Tree,24,27.0,16.789,12.606
+10000,Reverse Sorted,BST,9089,8700.854,4530.937,4504.123
+10000,Reverse Sorted,Red-Black Tree,24,26.79,16.774,12.633

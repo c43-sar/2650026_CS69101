@@ -1,0 +1,31 @@
+Nodes,Input Order,Tree,Average Search Iterations
+100,Random,BST,7.48
+100,Random,Red-Black Tree,5.91
+100,Sorted,BST,50.5
+100,Sorted,Red-Black Tree,6.2
+100,Reverse Sorted,BST,50.5
+100,Reverse Sorted,Red-Black Tree,6.2
+500,Random,BST,10.14
+500,Random,Red-Black Tree,8.24
+500,Sorted,BST,247.0
+500,Sorted,Red-Black Tree,8.42
+500,Reverse Sorted,BST,253.05
+500,Reverse Sorted,Red-Black Tree,8.31
+1000,Random,BST,12.17
+1000,Random,Red-Black Tree,9.38
+1000,Sorted,BST,510.62
+1000,Sorted,Red-Black Tree,9.45
+1000,Reverse Sorted,BST,484.35
+1000,Reverse Sorted,Red-Black Tree,9.34
+5000,Random,BST,28.37
+5000,Random,Red-Black Tree,11.2
+5000,Sorted,BST,2790.56
+5000,Sorted,Red-Black Tree,11.94
+5000,Reverse Sorted,BST,2124.53
+5000,Reverse Sorted,Red-Black Tree,11.42
+10000,Random,BST,107.51
+10000,Random,Red-Black Tree,12.6
+10000,Sorted,BST,4561.98
+10000,Sorted,Red-Black Tree,12.63
+10000,Reverse Sorted,BST,5094.85
+10000,Reverse Sorted,Red-Black Tree,12.68

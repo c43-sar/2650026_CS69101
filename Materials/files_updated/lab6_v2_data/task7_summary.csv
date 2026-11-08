@@ -1,0 +1,6 @@
+Elements,Height,Construction Iterations,Query Iterations,Update Iterations
+100,8,199,16.6,7.7
+500,10,999,26.96,9.94
+1000,11,1999,31.3,10.92
+5000,14,9999,40.988,13.332
+10000,15,19999,44.88,14.261

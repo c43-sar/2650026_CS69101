@@ -1,0 +1,16 @@
+Elements,Input Order,Segment Tree Average Query Iterations,Linear Search Average Iterations
+100,Random,19.22,26.92
+100,Sorted,19.22,26.92
+100,Reverse Sorted,19.22,26.92
+500,Random,27.76,122.57
+500,Sorted,27.76,122.57
+500,Reverse Sorted,27.76,122.57
+1000,Random,31.74,231.29
+1000,Sorted,31.74,231.29
+1000,Reverse Sorted,31.74,231.29
+5000,Random,41.46,1160.04
+5000,Sorted,41.46,1160.04
+5000,Reverse Sorted,41.46,1160.04
+10000,Random,44.14,2628.94
+10000,Sorted,44.14,2628.94
+10000,Reverse Sorted,44.14,2628.94

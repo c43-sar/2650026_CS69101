@@ -1,0 +1,4 @@
+Elements,Input Order,Height,Construction Iterations,Query Iterations,Update Iterations
+10000,Random,15,19999,44.88,14.261
+10000,Sorted,15,19999,44.88,14.261
+10000,Reverse Sorted,15,19999,44.88,14.261

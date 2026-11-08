@@ -1,0 +1,6 @@
+Nodes,BST Height,Red-Black Tree Height
+100,27,9
+500,56,12
+1000,77,13
+5000,169,15
+10000,235,17
