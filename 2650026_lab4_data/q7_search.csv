@@ -1,0 +1,6 @@
+Nodes,BST Average Search Iterations,Red-Black Tree Average Search Iterations
+100,6.68,5.91
+500,9.86,8.08
+1000,11.93,9.29
+5000,24.47,11.86
+10000,116.98,12.54

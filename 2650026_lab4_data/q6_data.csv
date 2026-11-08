@@ -1,0 +1,6 @@
+Nodes,Height,Insertion Iterations,Deletion Iterations,Search Iterations
+100,9,9.7,9.0,5.9
+500,12,11.0,11.04,7.76
+1000,13,12.18,12.11,9.1
+5000,16,14.824,14.524,11.44
+10000,17,15.701,15.073,12.501
