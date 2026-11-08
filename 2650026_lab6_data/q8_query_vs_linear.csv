@@ -1,0 +1,6 @@
+Elements,Segment Tree Average Query Iterations,Linear Search Average Iterations
+100,18.94,25.45
+500,27.34,133.2
+1000,31.28,276.88
+5000,40.9,1301.95
+10000,43.9,2113.07
