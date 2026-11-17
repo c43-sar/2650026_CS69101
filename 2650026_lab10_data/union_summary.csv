@@ -1,16 +1,16 @@
 Elements,Input Order,Binomial Union Iterations,Binomial Union Links,Binary Union Iterations,Binary Union Swaps,Trees of Heap 1,Trees of Heap 2,Trees After Union
-1000,Random,24,6,905,405,6,6,6
+1000,Random,24,6,885,385,6,6,6
 1000,Ascending Sorted,24,6,500,0,6,6,6
 1000,Descending Sorted,24,6,1417,917,6,6,6
-5000,Random,20,5,4558,2058,5,5,5
+5000,Random,20,5,4495,1995,5,5,5
 5000,Ascending Sorted,20,5,2500,0,5,5,5
 5000,Descending Sorted,20,5,7144,4644,5,5,5
-10000,Random,20,5,8678,3678,5,5,5
+10000,Random,20,5,8493,3493,5,5,5
 10000,Ascending Sorted,20,5,5000,0,5,5,5
-10000,Descending Sorted,20,5,14371,9371,5,5,5
-50000,Random,24,6,39980,14980,6,6,6
+10000,Descending Sorted,20,5,14377,9377,5,5,5
+50000,Random,24,6,39030,14030,6,6,6
 50000,Ascending Sorted,24,6,25000,0,6,6,6
-50000,Descending Sorted,24,6,71915,46915,6,6,6
-100000,Random,24,6,61850,11850,6,6,6
+50000,Descending Sorted,24,6,71901,46901,6,6,6
+100000,Random,24,6,61991,11991,6,6,6
 100000,Ascending Sorted,24,6,50000,0,6,6,6
-100000,Descending Sorted,24,6,143812,93812,6,6,6
+100000,Descending Sorted,24,6,143891,93891,6,6,6
