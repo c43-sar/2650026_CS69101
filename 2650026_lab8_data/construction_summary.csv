@@ -1,0 +1,16 @@
+Elements,Input Order,Bottom-Up Iterations,Bottom-Up Swaps,Top-Down Iterations,Top-Down Swaps
+1000,Random,1229,729,2234,1234
+1000,Ascending Sorted,500,0,1000,0
+1000,Descending Sorted,1492,992,8984,7984
+5000,Random,6118,3618,11290,6290
+5000,Ascending Sorted,2500,0,5000,0
+5000,Descending Sorted,7493,4993,56805,51805
+10000,Random,11928,6928,21474,11474
+10000,Ascending Sorted,5000,0,10000,0
+10000,Descending Sorted,14992,9992,123460,113460
+50000,Random,53115,28115,92056,42056
+50000,Ascending Sorted,25000,0,50000,0
+50000,Descending Sorted,74991,49991,731571,681571
+100000,Random,84865,34865,141304,41304
+100000,Ascending Sorted,50000,0,100000,0
+100000,Descending Sorted,149990,99990,1559040,1459040

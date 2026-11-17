@@ -1,0 +1,16 @@
+Elements,Input Order,Existing Average Iterations,Non-Existing Average Iterations
+1000,Random,519.03,1044.92
+1000,Ascending Sorted,625.49,1044.92
+1000,Descending Sorted,338.75,1044.92
+5000,Random,2619.22,4708.14
+5000,Ascending Sorted,2654.11,4708.14
+5000,Descending Sorted,2872.93,4708.14
+10000,Random,5208.73,10528.1
+10000,Ascending Sorted,5388.77,10528.1
+10000,Descending Sorted,4971.31,10528.1
+50000,Random,23232.29,68569.56
+50000,Ascending Sorted,26251.17,68569.56
+50000,Descending Sorted,23028.15,68569.56
+100000,Random,47162.47,156227.24
+100000,Ascending Sorted,51771.38,156227.24
+100000,Descending Sorted,42926.51,156227.24
