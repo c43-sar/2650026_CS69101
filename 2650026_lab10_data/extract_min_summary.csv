@@ -1,0 +1,16 @@
+Elements,Input Order,Total Iterations,Total Links,Average Iterations per Extract-Min,Average Links per Extract-Min
+1000,Random,38593,6415,38.593,6.415
+1000,Ascending Sorted,14431,161,14.431,0.161
+1000,Descending Sorted,13813,0,13.813,0.0
+5000,Random,247504,43993,49.5008,8.7986
+5000,Ascending Sorted,82171,678,16.4342,0.1356
+5000,Descending Sorted,79525,0,15.905,0.0
+10000,Random,543543,97568,54.3543,9.7568
+10000,Ascending Sorted,171766,678,17.1766,0.0678
+10000,Descending Sorted,169120,0,16.912,0.0
+50000,Random,3305695,603099,66.1139,12.06198
+50000,Ascending Sorted,981521,4190,19.63042,0.0838
+50000,Descending Sorted,964898,0,19.29796,0.0
+100000,Random,7105611,1304457,71.05611,13.04457
+100000,Ascending Sorted,2047414,4367,20.47414,0.04367
+100000,Descending Sorted,2029906,0,20.29906,0.0
